@@ -30,7 +30,10 @@ services:
     image: dpage/pgadmin4:latest
 	...
 ```
-of the YAML file, we can see that there is a service called `db` that uses Postgres 17. `db` has host port 5433 and local port 5432, so the other service, `pgadmin`, should use `db:5433` to connect to the postgres database.
+of the YAML file, we can see that there is a service called `db` that uses Postgres 17. `db` has host port 5433 and local port 5432.
+
+As Alexey explained in [this video](https://youtu.be/tOr4hTsHOzU?si=9NgbLnCB6TJqZK3o&t=945), both servises are created with one docker-compose file share the same network, therefore port-forwarding does not apply.
+Therefore, the other service, `pgadmin`, should use `db:5432` to connect to the postgres database since it operates in the same network.
 
 
 ## 3. Trip segmentation count

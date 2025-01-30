@@ -1,15 +1,16 @@
 services:
-  pgdatabase:
-    container_name: postgres
-    image: postgres:13
+  postgres:
+    image: postgres
+    container_name: postgres-db
     environment:
-      - POSTGRES_USER=root
-      - POSTGRES_PASSWORD=root
-      - POSTGRES_DB=ny_taxi
-    volumes:
-      - postgres_data:/var/lib/postgresql/data:rw
+      POSTGRES_USER: kestra
+      POSTGRES_PASSWORD: k3str4
+      POSTGRES_DB: postgres-zoomcamp
     ports:
       - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
   pgadmin:
     container_name: pgadmin
     image: dpage/pgadmin4
@@ -19,8 +20,8 @@ services:
     volumes:
       - pgadmin_data:/var/lib/pgadmin
     ports:
-      - "8080:80"
+      - "8088:80"
 
 volumes:
-  postgres_data:
+  postgres-data:
   pgadmin_data:

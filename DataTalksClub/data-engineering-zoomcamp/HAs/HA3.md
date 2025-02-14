@@ -24,14 +24,14 @@ Adjusted the `docker-compose.yml` file: added `env_file: ~/.gc/.env_encoded` lin
 
 ### 0.2 Setup GCS Bucket and BQ Dataset
 
-Adjusted and ran `04_gcp_kv.yaml` file using the values for my project ID and BQ bucket name (globally unique).
+Adjusted and ran [04_gcp_kv.yaml](../code/week3/04_gcp_kv.yaml) file using the values for my project ID and BQ bucket name (globally unique).
 
-> If you already have those, go to the next step. Otherwise, run `05_gcp_setup.yaml` to create.
+> If you already have those, go to the next step. Otherwise, run [05_gcp_setup.yaml](../code/week3/05_gcp_setup.yaml) to create.
 
 
 ### 0.3 Upload the `.parquet` files to GCS
 
-I made a Kestra YAML file (`./code/week3/ha3_yellow_taxi_data.yaml`) for downloading the data from the [TLC Trip Record Data website](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page) and putting them to GCS.
+I made a Kestra YAML file [ha3_yellow_taxi_data.yaml](../code/week3/ha3_yellow_taxi_data.yaml) for downloading the data from the [TLC Trip Record Data website](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page) and putting them to GCS.
 
 Ran the backfill from `'2024-01-01 00:00:00'` to `'2024-06-02 00:00:00'`.
 

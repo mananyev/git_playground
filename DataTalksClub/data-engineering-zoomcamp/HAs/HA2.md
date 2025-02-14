@@ -4,15 +4,15 @@
 
 Run docker-compose files:
 
-1. in `./code/week2/` to launch Kestra.
-2. in `./code/week2/postgres` to launch pgadmin.
+1. [this docker-compose file](../code/week2/docker-compose.yml) to launch Kestra.
+2. [this file](../code/week2/postgres/docker-compose.yml) to launch pgadmin.
 
 > Note that pgadmin's port 80 is forwarded to port 8088, so I checked the content on `localhost:8088`.
 
 Following the lectures, I prepared two flows:
 
-- `examples.postgres_taxi.yml` for manual selection of taxi/year/month (and a disabled `purge_files` task to keep the `.CSV` files in the outputs), and
-- `examples.postgres_taxi_scheduled.yml` for scheduled updates/backfill.
+- [examples.postgres_taxi.yml](../code/week2/examples.postgres_taxi.yml) for manual selection of taxi/year/month (and a disabled `purge_files` task to keep the `.CSV` files in the outputs), and
+- [examples.postgres_taxi_scheduled.yml](../code/week2/examples.postgres_taxi_scheduled.yml) for scheduled updates/backfill.
 
 
 ## 1. Quiz Questions

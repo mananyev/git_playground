@@ -7,4 +7,4 @@ I had to launch Jupyter on GCP VM because there I have Anaconda Python `3.12` di
 cannot import name '_TrimmedRelease' from 'packaging.version'
 ```
 
-On the GCP VM with Python `3.12` I created and launched a Jupyter Notebook which can be found in `./code/dlt_workshop/dlt_workshop_HA.ipynb`.
+On the GCP VM with Python `3.12` I created and launched a [Jupyter Notebook file](../code/dlt_workshop/dlt_workshop_HA.ipynb).

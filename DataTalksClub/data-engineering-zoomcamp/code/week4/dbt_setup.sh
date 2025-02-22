@@ -6,3 +6,9 @@ docker-compose run dbt-bq-dtc init  # to initialize profiles
 # BUT also dataset and project ID - this is required to connect
 # test connection with
 docker-compose run --workdir="//usr/app/dbt/taxi_rides_ny" dbt-bq-dtc debug
+
+# after adding a .csv file to the seeds folder run
+docker-compose run --workdir="//usr/app/dbt/taxi_rides_ny" dbt-bq-dtc seed
+# this will upload the .csv files from the folder to BQ
+# finally, to build fact_trips and all the dependancies, run
+docker-compose run --remove-orphans --workdir="//usr/app/dbt/taxi_rides_ny" dbt-bq-dtc build --select +fact_trips
